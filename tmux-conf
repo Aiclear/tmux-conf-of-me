@@ -1,0 +1,15 @@
+bind r source-file ~/.tmux.conf \; display-message "Config reload..."
+
+unbind '"'
+bind - splitw -v -c '#{pane_current_path}'
+unbind %
+bind | splitw -h -c '#{pane_current_path}'
+
+# 开启鼠标支持
+set-option -g mouse on
+
+# 绑定h，j，k，l键为面板切换的上下左右键
+bind -r k select-pane -U
+bind -r j select-pane -D
+bind -r h select-pane -L
+bind -r l select-pane -R
